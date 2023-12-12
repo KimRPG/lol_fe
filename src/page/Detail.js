@@ -30,11 +30,18 @@ const Detail = () => {
   const { index } = useParams();
   const navigate = useNavigate();
   const nav = async()=>{
-    navigate(`/update/${index}`)
+    if(sessionStorage.getItem("login")==="1"){
+      navigate(`/update/${index}`)
+    }
+    else{
+      alert("로그인이 필요한 서비스입니다.");
+      navigate("/login")
+    }
   }
 
   const handleDelete = async () => {
-    try {
+    if(sessionStorage.getItem("login")==="1"){    
+      try {
       axios.delete(`http://52.79.243.183:8000/delete/${index}`)
       .then(response => {
         alert('Character deleted successfully');
@@ -43,11 +50,14 @@ const Detail = () => {
       .catch(error => {
         alert('Error deleting character: ' + error);
       });
-
-
     } catch (error) {
       alert('Error deleting character: ' + error);
+    }}
+    else{
+      alert("로그인이 필요한 서비스입니다.");
+      navigate("/login");
     }
+
   };
 
 
