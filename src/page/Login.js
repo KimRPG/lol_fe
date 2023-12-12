@@ -37,7 +37,7 @@ const Login = () => {
   const handleLogin = () => {
     // 여기에 실제 로그인 로직을 구현할 수 있습니다.
     // 예시로 간단하게 username과 password가 일치할 때 로그인 상태로 변경하는 것을 보여줍니다.
-    if (username === 'user' && password === 'password') {
+    if (username === 'admin' && password === '1234') {
       setIsLoggedIn(true);
       sessionStorage.setItem("login","1");
       navigate("/");

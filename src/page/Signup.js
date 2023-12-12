@@ -21,9 +21,9 @@ const Signup = () => {
   return (
     <CenteredContainer>
       <Form>
-        <Label htmlFor="user">ID = user</Label>
+        <Label htmlFor="user">ID = admin</Label>
         <br/>
-        <Label htmlFor="password">password = password</Label>
+        <Label htmlFor="password">password = 1234</Label>
         <br/>
         <Link to={"/login"} >로그인으로</Link>
       </Form>
