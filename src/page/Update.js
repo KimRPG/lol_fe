@@ -61,7 +61,7 @@ const Update = () => {
 
   useEffect(() => {
     
-    axios.get(`http://52.79.243.183:8080/read/${index}`)
+    axios.get(`http://52.79.243.183:8000/read/${index}`)
     .then(response => {
       setCharacter(response.data);
     })
@@ -81,7 +81,7 @@ const Update = () => {
 
   const handleUpdate = async () => {
     try {
-      axios.put(`http://52.79.243.183:8080/update/${index}`, character)
+      axios.put(`http://52.79.243.183:8000/update/${index}`, character)
       .then(response => {
         alert('Character updated successfully');
         navigate('/');
@@ -109,7 +109,7 @@ const Update = () => {
       const formData = new FormData();
       formData.append("image", file);
 
-      const response = await axios.post("http://52.79.243.183:8080/image", formData, {
+      const response = await axios.post("http://52.79.243.183:8000/image", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

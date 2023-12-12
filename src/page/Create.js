@@ -61,7 +61,7 @@ const Create = () => {
     e.preventDefault();
   
     try {
-      const response = await axios.post('http://52.79.243.183:8080/create', character
+      const response = await axios.post('http://52.79.243.183:8000/create', character
       );
 
       if (response.status === 200) {
@@ -81,7 +81,7 @@ const Create = () => {
       const formData = new FormData();
       formData.append("image", file);
 
-      const response = await axios.post("http://52.79.243.183:8080/image", formData, {
+      const response = await axios.post("http://52.79.243.183:8000/image", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

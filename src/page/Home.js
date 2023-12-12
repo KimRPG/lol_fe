@@ -59,7 +59,7 @@ const Card = ({ title, description, image }) => {
 const CardList = () => {
   const [characterData, setCharacterData] = useState([]);
   useEffect(() => {
-    axios.get("http://52.79.243.183:8080/readall")
+    axios.get("http://52.79.243.183:8000/readall")
       .then(function (response) {
         setCharacterData(response.data);
       })

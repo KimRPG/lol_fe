@@ -35,7 +35,7 @@ const Detail = () => {
 
   const handleDelete = async () => {
     try {
-      axios.delete(`http://52.79.243.183:8080/delete/${index}`)
+      axios.delete(`http://52.79.243.183:8000/delete/${index}`)
       .then(response => {
         alert('Character deleted successfully');
         navigate('/');
@@ -54,7 +54,7 @@ const Detail = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://52.79.243.183:8080/read/${index}`);
+        const response = await axios.get(`http://52.79.243.183:8000/read/${index}`);
         setData(response.data);
       
       } catch (error) {
