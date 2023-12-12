@@ -10,7 +10,7 @@ app.get('*', (_, res) => {
 	res.sendFile(path.join(__dirname, '/build/index.html'))
 })
 
-const PORT = 3000;
+const PORT = 80;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`); // 정상동작 확인용 주석
