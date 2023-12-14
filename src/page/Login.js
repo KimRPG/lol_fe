@@ -35,13 +35,21 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
+    if(username !== 'admin'){
+      alert("ID가 일치하지 않아요!")
+    } else if(password !=="1234"){
+      alert("password가 일치하지 않아요")
+    }else{
+      if (username === 'admin' && password === '1234') {
+
+        setIsLoggedIn(true);
+        sessionStorage.setItem("login","1");
+        navigate("/");
+      }
+    }
     // 여기에 실제 로그인 로직을 구현할 수 있습니다.
     // 예시로 간단하게 username과 password가 일치할 때 로그인 상태로 변경하는 것을 보여줍니다.
-    if (username === 'admin' && password === '1234') {
-      setIsLoggedIn(true);
-      sessionStorage.setItem("login","1");
-      navigate("/");
-    }
+
   };
 
   return (
